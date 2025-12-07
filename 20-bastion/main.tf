@@ -4,10 +4,10 @@ resource "aws_instance" "bastion" {
     vpc_security_group_ids = [local.bastion_sg_id]
     subnet_id = local.public_subnet_id
 
-    tags = merge(
+  tags = merge(
     local.common_tags,
     {
         Name = "${var.project_name}-${var.environment}-bastion"  # roboshop-dev-bastion
     }
-  )
+  ) 
 }
