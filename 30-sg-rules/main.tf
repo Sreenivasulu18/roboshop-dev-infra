@@ -20,7 +20,7 @@ resource "aws_security_group_rule" "bastion_laptop" {
 }
 
 # mongodb accepting traffic from bastion
-resource "aws_security_group_rule" "mongodb_bastion" {
+resource "aws_security_group_rule" "mongodb_bastion" {  
   type              = "ingress"
   security_group_id = local.mongodb_sg_id  # mongodb SG ID
   source_security_group_id = local.bastion_sg_id # bastion SG ID
