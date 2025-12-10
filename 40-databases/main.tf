@@ -78,7 +78,6 @@ resource "terraform_data" "redis" {
 
 #### rabbitmq
 
-##### Redis
 resource "aws_instance" "rabbitmq" {
     ami = local.ami_id
     instance_type = "t3.micro"
