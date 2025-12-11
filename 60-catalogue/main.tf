@@ -50,8 +50,8 @@ resource "aws_ec2_instance_state" "catalogue" {
   depends_on = [terraform_data.catalogue]
 }
 
-resource "aws_ami_from_instance" "catalogue"{
-	name = "${local.common_name_suffix}-catalogue-ami"
-	source_instance_id = aws_instance_catalogue.id
-	depends_on = [aws_ec2_instance_state.catalogue]
+resource "aws_ami_from_instance" "catalogue" {
+  name               = "${local.common_name_suffix}-catalogue-ami" # roboshop-dev-catalogue-ami
+  source_instance_id = aws_instance.catalogue.id
+  depends_on = [aws_ec2_instance_state.catalogue]
 }
