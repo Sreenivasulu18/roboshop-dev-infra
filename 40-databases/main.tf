@@ -201,3 +201,18 @@ resource "aws_route53_record" "mysql" {
   records = [aws_instance.mysql.private_ip]
   allow_overwrite = true
 }
+
+
+# using loop
+# resource "aws_route53_record" "db" {
+#   for_each = local.db_private_ips
+
+#   zone_id = var.zone_id
+#   name    = "${each.key}-${var.environment}.${var.domain_name}"
+#   type    = "A"
+#   ttl     = 1
+#   records = [each.value]
+#   allow_overwrite = true
+# }
+
+
