@@ -79,7 +79,7 @@ resource "aws_lb_target_group" "catalogue" {
         protocol = "HTTP"
         timeout = 2
         unhealthy_threshold = 2
-    }
+  }
 }
 
 resource "aws_launch_template" "catalogue" {
@@ -152,7 +152,7 @@ resource "aws_autoscaling_group" "catalogue" {
   } 
 }
 
-resource "aws_autoscaling_policy" "example" {
+resource "aws_autoscaling_policy" "catalogue" {
     autoscaling_group_name = aws_autoscaling_group.catalogue.name
     name                   = "${local.common_name_suffix}-catalogue"
     policy_type            = "TargetTrackingScaling"
