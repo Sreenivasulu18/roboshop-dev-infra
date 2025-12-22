@@ -9,22 +9,22 @@ variable "rule_priority" {
 variable "components"{
     default = {
         catalogue = {
-            default = 10
+            rule_priority = 10
         }
         user = {
-            default = 20
+            rule_priority = 20
         }
         cart = {
-            default = 30
+            rule_priority = 30
         }
         shipping = {
-            default = 40
+            rule_priority = 40
         }
         payment = {
-            default = 20
+            rule_priority = 20
         }
         frontend = {
-            default = 10
+            rule_priority = 10
         }
     }
 }
